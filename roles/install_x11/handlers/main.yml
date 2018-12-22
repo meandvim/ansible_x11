@@ -1,2 +1,7 @@
 ---
 # handlers file for install_x11
+
+- name: Restarting sshd
+  service:
+    name: sshd
+    state: restarted

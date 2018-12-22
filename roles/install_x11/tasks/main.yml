@@ -1,2 +1,15 @@
 ---
-# tasks file for install_x11
+
+# Getting started
+# 
+
+
+- name: Installing CentOS X11 packages
+  import_tasks:
+     centos_7_install_x11.yml
+  when: >
+     ansible_distribution |lower  == "centos"
+        and
+     ansible_distribution_major_version == "7" 
+
+

@@ -1,0 +1,32 @@
+---
+# Configuring sshd_conf for CentOS X11
+
+# Uncommenting X11 X11Forwarding if need be
+- name: Configure sshd on CentOS7  for X11
+  lineinfile:
+     #The next line is needed to ensure idempotency
+    path: /etc/ssh/sshd_config
+    regexp: '^(\s*)#(\s*)X11Forwarding(\s+)yes'
+       # regex explanation      
+         #   ^     Match the beginning of the line
+         #   (\s*)   Match 0 or more white spaces
+         #   (\s+)   Match 1 ore more white spaces
+         # for (\s+) make sure you place it immediately after the preceding \
+         # word/patter so that it matches at least one whitespace
+
+    # The next codeblock will replace the regexp patter
+    # The > is the yaml line continuation keywad, allows for multiple lines
+    line: >  
+       X11Forwarding yes
+    backrefs: yes
+  notify: restart sshd
+
+
+
+
+
+
+
+
+
+

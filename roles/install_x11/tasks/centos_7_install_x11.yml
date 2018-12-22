@@ -1,0 +1,14 @@
+---
+# Installing the Centos7 x11 packages
+
+- name: Installing Centos7 X11 packages
+  yum:
+    name: "{{ centos7_x11_pkgs }}"
+    state: present
+
+
+
+
+
+
+

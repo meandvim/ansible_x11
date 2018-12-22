@@ -1,2 +1,8 @@
 ---
-# defaults file for install_x11
+# vars file for install_x11
+
+centos7_x11_pkgs:
+   - xorg-x11-server-Xorg
+   - xorg-x11-xauth
+   - xorg-x11-apps
+

@@ -1,2 +1,9 @@
 ---
 # handlers file for configure_sshd_for_x11
+
+
+- name: Handler restating sshd 
+  service:
+    name: sshd
+    state: restarted
+  listen: restart sshd

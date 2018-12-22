@@ -1,5 +1,11 @@
 ---
 - hosts: all
+  become: yes
   roles:
-    - 
+    - install_x11
+    - configure_sshd_for_x11
   tasks:
+
+
+
+

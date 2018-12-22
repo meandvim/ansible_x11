@@ -1,2 +1,10 @@
 ---
 # tasks file for configure_sshd_for_x11
+
+- name: Configure the sshd for for X11 on CentOS
+  import_tasks:
+     centos7_configure_sshd_for_x11.yml
+  when: >
+     ansible_distribution |lower  == "centos"
+        and
+     ansible_distribution_major_version == "7" 
